@@ -1,6 +1,6 @@
 ---
-title: Welcome to Quartz
+title: Alan's Notes
+description: Homepage
+date: 2025-09-11
 ---
-
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+Website under construction! Check back in a bit
