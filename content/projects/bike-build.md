@@ -7,7 +7,7 @@ date: 2025-09-11
 Like any engineering nerd, I love building and repairing bikes.
 # Supersix.zipp
 #### 11 Sep 2025
-My current road bike, and the first bike I ever rode regularly on, is a 2015-ish Di2-only carbon Supersix Evo frame with 2013-ish Zipp 404s. It was my weekend project from late September to early November of 2024, when I was just getting started with my year at Starpath. My housemate Matt, a college triathlete, had an old frame that he was going to sell in the garage, and had been trying to get me into cycling. I jokingly suggested that I could build a bike with his frame, and he actually graciously let me have it. He also gave me his old Zipp 404s, from a time trial bike that he had crashed and since thrown away.
+My current road bike, and the first bike I ever rode regularly on, is a 2013 Di2-only carbon Supersix Evo frame with 2013-ish Zipp 404s. It was my weekend project from late September to early November of 2024, when I was just getting started with my year at Starpath. My housemate Matt, a college triathlete, had an old frame that he was going to sell in the garage, and had been trying to get me into cycling. I jokingly suggested that I could build a bike with his frame, and he actually graciously let me have it. He also gave me his old Zipp 404s, from a time trial bike that he had crashed and since thrown away.
 ![[supersix-parts.jpg]]
 It was a long project, with roughly the following steps:
 - Replace the Zipp 404 freehub with a Zipp 188 12spd freehub, since the old freehub is too short for a modern 12 speed Shimano cassette
