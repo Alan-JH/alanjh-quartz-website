@@ -22,7 +22,8 @@ date: 2025-09-11
 - Ski bumps
 - Read sci-fi
 ## Want to
-- Make humans multiplanetary and make space cheap
+- Make humans multiplanetary
+- Preserve our pale blue dot
 - Pass on the things that I learn
 - Enjoy the outdoors
 
