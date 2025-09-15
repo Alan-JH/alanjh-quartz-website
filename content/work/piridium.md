@@ -8,7 +8,7 @@ Design files and further documentation at this [Github Repo](https://github.com
 
 Piridium is a CubeSat bus design employing a similar design philosophy to Pycubed, but using an Iridium 9602N Modem and Raspberry Pi Zero flight computer incorporating design lessons from TJREVERB, the 2U CubeSat that I worked on. It is designed to be a low cost and easy to use CubeSat bus with basic payload interfacing. The Raspberry Pi allows flight software development in an operating system, which is more accessible to students than precompiled firmware. The Iridium modem uses the Iridium constellation for communication with the ground, which is a paid subscription service and eliminates the need for a hardware groundstation and antenna tracking software.
 
-![[piridium-stacked.png]]
+![[piridium-stacked.jpg]]
 ### Design Process & Philosophy
 
 I started the design in September '22, from a previous EPS project I had been working on. I worked in KiCAD, and started with the goals of keeping the design simple while still incorporating necessary protections and telemetry. The idea was to implement a bus around the Raspberry Pi Zero and Iridium 9602N Modem that TJREVERB used. TJREVERB used several stacked boards and converted UART to RS232 just for the modem breakout board to convert back to UART, so there was a lot of space and complexity to be saved. Additionally, the EPS and battery we used on TJREVERB included a lot of features we didn't need and never used, so I wanted to design my own power electronics for this bus (similarly to Pycubed).
@@ -17,10 +17,10 @@ Components were specced to AEC-Q100/101/200 Automotive grade where practical, as
 
 I ended up iterating three times from September to January, though I only ordered and assembled the first two iterations as the third iteration fixed an issue that could be fixed with a jumper wire modification. The second and third iterations both fixed design mistakes from the previous versions. I ordered and assembled the boards using surplus REVERB funding and parts, with my own solder paste setup and hot air station. I was especially anxious about whether the power electronics would work, so I assembled the first version section by section (5V regulators, then solar regulators, then inhibits), testing each section as I went.
 
-![[piridium-bottom.png|In the middle of assembling the power electronics]]
+![[piridium-bottom.jpg|In the middle of assembling the power electronics]]
 
-![[piridium-latchup.png|Latchup testing]]
-![[piridium-outside-test.png|Testing connectivity outside]]
+![[piridium-latchup.jpg|Latchup testing]]
+![[piridium-outside-test.jpg|Testing connectivity outside]]
 ### Tech Specs
 
 - Flight Computer: Raspberry Pi Zero W
@@ -37,7 +37,7 @@ I ended up iterating three times from September to January, though I only ordere
 
 See the Github README file for more info on chip selection and usage.
 
-![[piridium-final.png]]
+![[piridium-final.jpg]]
 ### Issues and Future Work
 
 The only major hardware issue after assembling the boards is that the battery balancing IC does not seem to work. This is very likely to be an issue with how I assembled the board, but I have not been able to debug it.

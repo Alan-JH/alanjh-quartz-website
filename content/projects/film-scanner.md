@@ -18,13 +18,13 @@ Why? Normal lenses are not designed to be mounted to extensions, so by adding ex
 
 Monday came around, and I stopped by the Robotics lab to 3D print a 24.5mm extension and pick it up in 7th period. The first layer got messed up, so I couldn't screw it all the way onto the M42 mount, but it did work as a macro extension, and I did take a couple photos with it with my Sony and my Pentax.
 
-![[pentax-me.png|Mounted on the Pentax]]
-![[receipt.png|Sample image with Sony a6000]]
+![[pentax-me.jpg|Mounted on the Pentax]]
+![[receipt.jpg|Sample image with Sony a6000]]
 
 I also tried a couple film scans using my desk lamp as a backlight. I used darktable's built in negadoctor function, which handles much of the color inversion process on its own, including subtracting the color of the film base, and dealing with dynamic range.
 
-![[lamp-1.png]]
-![[scan-1.png|250]]![[scan-2.png|250]]![[scan-3.png|250]]
+![[lamp-1.jpg]]
+![[scan-1.jpg|250]]![[scan-2.jpg|250]]![[scan-3.jpg|250]]
 
 The lamp was nearly the perfect size for 35mm film, but had major dimming near the edges, which is why all the scans ended up brighter along the top and bottom (following color inversion). The concept had been proven, but it was clear I would need a better light source and a setup that kept the film in plane with the sensor for focusing. I got to work on designing a hood to keep outside light out and keep the film in plane.
 
@@ -32,40 +32,40 @@ The lamp was nearly the perfect size for 35mm film, but had major dimming near t
 
 On Tuesday, I finished up my design and 3D printed it again in the Robotics lab. I also printed another macro extension, this time with good threads and a thicker outer diameter to make it look better. I brought some expired negatives I didn't care about damaging, and stayed after school working on my design at a CubeSat meeting, laser cutting a bottom plate and messing around with macro photography at 50mm. The design used three laser cut plywood bottom sheets layered on top of each other, and a 3D printed mount for the camera (via a peakdesign plate) and the hood (via two M5 bolts). I made sure to make the M5 mounting holes slots so that I could adjust the film forward or back to be in focus. I had measured the focusing distance to 21cm or so (as listed by that online lens magnification calculator) but there was a decent chance it would be off, especially considering the millimeter-level depth of field that the macro extensions yielded.
 
-![[scanner-1.png]]
-![[scanner-2.png]]
+![[scanner-1.jpg]]
+![[scanner-2.jpg]]
 The scans from this were better focused, but the lighting issues persisted because of the poor backlight. It was at this point that I decided to order an LED panel with claimed >95 Color Rendering Index (CRI).
 ### Wednesday
 
 On Wednesday, I brought in my negatives again, and attempted some more scanning and editing. My friend Aarush suggested that I use my phone as a backlight, as phone displays tend to have pretty good color rendering.
 
-![[scan-4.png|300]]![[scan-5.png|300]]
+![[scan-4.jpg|300]]![[scan-5.jpg|300]]
 At this point, I started getting concerned about color rendering. The scans were turning out pretty blue, and part of this is a natural part of film scanning, but my Takumar lens was also contributing to it. The 50mm Takumar is a radioactive lens with a goldish tint, which translates to a blue hue after the colors are inverted. I spent a long time playing around in darktable, and seeing if I could set camera white balance to reverse the Tak tint.
 
 ### Thursday
 
 Thursday was much the same as Wedesnday, except this time I 3D printed a film holder instead of sliding film between two pieces of 3M VHB tape so that I wouldn't have to take the hood cap piece off whenever I wanted to load film. I continued to try to reverse Tak tint on expired negatives, not wanting to risk damaging my non expired Ektar negatives until I had a good method down. I also played around with using bluer backlights. It was beginning to dawn on me that negadoctor removes most variations in white balance and tint by allowing you to sample a section of the image as the film stock color, so the Tak tint shouldn't matter.
 
-![[scanner-3.png]]
-![[scan-6.png]]
+![[scanner-3.jpg]]
+![[scan-6.jpg]]
 ### Friday
 
 On Friday, I received my 95 CRI backlight and mounted it to the setup with a 3D printed attachment that I glued to the plywood. The images were about the same as with my phone backlight, but the new backlight has the option for higher brightness and more temperature adjustment. I finally gave up on expired negatives and decided to take out my Ektars, and these were FAR easier to work with. I found that applying negadoctor settings and then adjusting white balance until colors matched worked well. I also took a scan with my Sony 16-50 kit lens, which was heavily cropped because I didn't have macro extensions for E mount, just to test whether the Tak tint was actually causing color issues. I applied the same negadoctor and white balance processes, and the image came out almost identical, so the Tak is fine.
 
-![[scanner-4.png]]
-![[scan-7.png|First scan using non expired negatives with the hood and 95 CRI backlight]]
-![[scan-8.png|More extreme processing]]
+![[scanner-4.jpg]]
+![[scan-7.jpg|First scan using non expired negatives with the hood and 95 CRI backlight]]
+![[scan-8.jpg|More extreme processing]]
 ### Saturday
 
 On Saturday, I found two helpful videos by Alex Burke on [basic color inversion](https://www.youtube.com/watch?v=ylIyA6wQGcY) for film scans in Photoshop, and [more advanced techniques](https://www.youtube.com/watch?v=urw5x03c9gs)  when basic color references aren't present. I got a 7 day trial of Adobe Creative Cloud just to try this out, and the results were pretty similar. But I was impressed by how easy Photoshop made the manual process, compared to darktable's relatively clunky UI. I was working to try to match the colors in the scans I got from the store, but I couldn't quite match the filmy quality, because I didn't realize that the as shot white balance was clipping the blue channel after inversion.
 
-![[scan-9.png]]
-![[scan-10.png]]
+![[scan-9.jpg]]
+![[scan-10.jpg]]
 ### V2 Addendum
 
 I designed a second version with prints that mount to a 300mm length of 2020 extrusion, mostly to keep the whole thing more rigid than plywood. I also designed a better mount that allows the peakdesign plate mount to be adjusted with four M3 screws.
 
-![[scanner-5.png]]
+![[scanner-5.jpg]]
 I also later realized that setting the white balance to auto was necessary, because the blue rgb channel was getting clipped after inversion with "as shot", which was sony's daylight preset for consistency. I got much better scans after this.
 
 ### The Final Procedure
@@ -89,4 +89,4 @@ I'm still working on my Photoshopping skills, but it gives a lot more control th
 
 Thanks to Aarush Sivanesan for helping debug, giving me tips on lighting, and providing feedback on my scans
 
-![[scanner-final.png]]
+![[scanner-final.jpg]]
