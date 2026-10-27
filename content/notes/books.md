@@ -14,8 +14,6 @@ Some of the most imaginative speculative science fiction written recently. Its p
 An extremely important dissection of the managerial causes of the Challenger disaster, which should be required reading for all engineers. Vaughan picks apart the simple widespread narrative of NASA managers pressuring Thiokol engineers to approve a launch outside of safe conditions and instead describes a much more complex story of procedural drift and normalization of performance deviance, amplified by an under-resourced and schedule-pressured NASA. A bit of a tough read, but extremely important to be able to pick out the population scale effects of engineering culture that are hard to see as an individual embedded within it.
 #### Hua Hsu | Stay True
 One of my favorite memoirs, which so perfectly captures the atmosphere of college and young adult life, before a tragic depiction of loss.
-#### Anthony Doerr | All the Light We Cannot See
-A wonderful book that highlights the power and the fleeting nature of human connection even in times of trouble.
 #### Ted Chiang | Exhalation (Short Story Collection)
 A collection of crisp short stories in science fiction which explore ideas from the purpose of creation to the nature of memory and choice. He puts uniquely human perspectives to far-out concepts like time travel, entropy, and many-worlds.
 

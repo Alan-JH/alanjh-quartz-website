@@ -110,7 +110,7 @@ After freshman year, I had a lot of time over the summer, so I decided to get ba
 
 ### Tamiya 1:72 F-16CJ Bl.50 Viper
 
-Immediately after the Hornet, I wanted to do another, and I also wanted to go back to Tamiya quality, so I picked out the Tamiya F-16. The kit had a much more complete wild weasels loadout than the Revell, and I made a diorama of a fox-3 shoot with cotton, some 2mm steel rods, and a 3D printed base. The only thing I wish I had done differently was using a satin varnish instead of gloss, because it's a little unrealistically shiny. This model has the honor of sitting atop my PC.
+Immediately after the Hornet, I wanted to do another, and I also wanted to go back to Tamiya quality, so I picked out the Tamiya F-16. The kit had a much more complete wild weasels loadout than the Revell, and I made a diorama of a fox-3 shoot with cotton, some 2mm steel rods, and a 3D printed base. The only thing I wish I had done differently was using a satin varnish instead of gloss, because it's a little unrealistically shiny.
 
 ![[scale-f16-1.jpg]]
 

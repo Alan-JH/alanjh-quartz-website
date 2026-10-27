@@ -2,6 +2,8 @@
 title: Lemur Pro 11 -> NAS Conversion
 date: 2026-09-19
 ---
+[Github Repo](https://github.com/Alan-JH/lemp11-nas)
+
 System76 Lemur Pro 11 has been my daily driver laptop for four years, before upgrading to a Framework laptop 13. Since March it has been sitting around doing very little, and I thought I might try converting it to a mini NAS for offsite backup.
 
 Why?
@@ -74,5 +76,27 @@ Once the firmware was a proven concept, I disassembled what remained of the lapt
 I traced out the motherboard on graph paper to find dimensions between board outline and mounting holes. The two central mounting holes just happened to be horizontally aligned and exactly 4.5 inches apart (each square on the graph paper was 1/4"). I used these as my datum for most dimensions off the grid paper, and built out a CAD to 3D print models and check hole alignment. 
 
 For the main housing itself I considered buying a 6x3x1/8" profile box stock 14" long of 6061 Al to save cost, which I can source for $60, but weighs 2lbs and has no anodization available, and would require me to drill all holes and openings myself. Slightly more expensive but potentially more visually appealing would be to design and order bent sheet metal parts at e.g. Sendcutsend with anodize. Either way I would size to be able to fit two 60mm exhaust fans on one end of the box, with air being pulled lengthwise across it. The box stock would require all internals to be assembled on a sliding structure before installation, while bent sheet metal can be installed in two parts without the need for sliding. The latter is especially attractive if I want to, for example, TIM the battery to the housing to ensure good cooling. Sheet metal would also be lighter, since I could use thinner materials than are available in box stock.
+
+### PCB Design
+
+Initially, I had wanted to build a SATA backplane type PCB with sata power + data connectors for each drive, but I ended up deciding against it because that would require:
+1. Some sort of floating element to allow the hard drives to mate with the fixed sata connectors without overconstraining and breaking a connector
+2. Multiple boards if more than two layers of drives are desired (I decided I want to be able to add some 2.5" drives if possible)
+3. High speed data routing for SATA 3 passthrough
+
+It's just too much complexity for a bit extra neatness. I ended up deciding on using a Corsair Type 5 SATA power cable instead (since I already own two SF750 PSUs), which use a micro-fit 3.0 6 pin connector on the PSU side. I probed one of my SF750s in my PC while it was powered on to get the pin voltages of the connector.
+
+| 1   | 2   | 3    |
+| --- | --- | ---- |
+| 12V | 5V  | 3.3V |
+| 4   | 5   | 6    |
+| GND | 5V  | GND  |
+(where pin numbers follow the KiCAD footprint)
+
+I also realized at this point that I would need to tap off both the system rail voltage and another gated rail voltage to signal when to power off the DC-DC converter for the SATA drives, otherwise the drives would remain powered off of the system rail even when the system had shut down, draining the battery unnecessarily. I decided to use the 3.3V supplied to the M.2 connectors for this, which is helpfully exposed on a pair of decoupling caps on the M.2 extender I bought for mounting the PH516 M.2 to SATA adapter.
+
+I also wanted the PCB to sequence two separate SATA power plugs so that I could sequence the two drive spinups a couple seconds apart, decreasing the transient loading (which would be about 25W per drive in the worst case), and wanted fan headers to power flow through fans for the NAS case.
+
+For the DC-DC converter I selected an LM5175RHF 4-switch buck-boost and more or less copied the device calculations off of the TI excel tool. I'm not here to practice electrical engineering theory, after all.
 
 ***WIP, TO BE CONTINUED***
