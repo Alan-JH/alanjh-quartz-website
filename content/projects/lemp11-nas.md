@@ -95,8 +95,28 @@ It's just too much complexity for a bit extra neatness. I ended up deciding on u
 
 I also realized at this point that I would need to tap off both the system rail voltage and another gated rail voltage to signal when to power off the DC-DC converter for the SATA drives, otherwise the drives would remain powered off of the system rail even when the system had shut down, draining the battery unnecessarily. I decided to use the 3.3V supplied to the M.2 connectors for this, which is helpfully exposed on a pair of decoupling caps on the M.2 extender I bought for mounting the PH516 M.2 to SATA adapter.
 
-I also wanted the PCB to sequence two separate SATA power plugs so that I could sequence the two drive spinups a couple seconds apart, decreasing the transient loading (which would be about 25W per drive in the worst case), and wanted fan headers to power flow through fans for the NAS case.
+I also wanted the PCB to sequence two separate SATA power plugs so that I could sequence the two drive spinups several seconds apart, decreasing the transient loading (which would be about 25W per drive in the worst case), and wanted fan headers to power flow through fans for the NAS case.
 
-For the DC-DC converter I selected an LM5175RHF 4-switch buck-boost and more or less copied the device calculations off of the TI excel tool. I'm not here to practice electrical engineering theory, after all.
+For the DC-DC converter I selected an LM5175RHF 4-switch buck-boost and more or less copied the device calculations off of the TI excel tool. I'm not here to practice electrical engineering theory, after all. The LM5175 must regulate down to about 5V in case of droop when the system rail transitions from 19V (plugged in) to 6-8.8V (battery powered) without causing loss of output regulation. The LM5175 regulates the 12V rail for the hard drives, and an LM5116 buck regulator converts from that 12V rail to 5V for the 5V SATA rails. To protect the SATA plugs and to sequence power so that one drive spins up at a time, I used two TPS2598x load switches on each rail, one feeding each connector. I had planned to use TPS25980, but because the 16.8V OVLO part was out of stock, I had to use the TPS25982 which is luckily a drop in replacement.
+
+The PCB is designed to work entirely in analog, but a microcontroller is used to provide telemetry, manually power off drives, and manually control fan speeds. With the microcontroller left unprogrammed, a large RC divider on the EN pin of the load switches for one of the two SATA power connectors delays the startup by 4-5 seconds on its own, and the fan speed is left at full because the PWM line is left undriven.
+
+I ordered the first revision of the board on October 25.
+
+![[Pasted image 20261027235446.png]]
+
+### Housing Design
+
+While waiting for the PCB design to come in, I designed the housing. I had at this point decided to change my cooling setup from 2x 60mm fan to 1x 92mm fan, as I would need the extra height in the enclosure anyways and a 92mm fan would perform better per noise level. I also decided to add dedicated mounting for 2x 2.5" SATA drives on top of the 2x 3.5" SATA drives. I basically learned sheet metal modelling in Solidworks from scratch and designed the first version of the case in about a day.
+
+![[Pasted image 20261027235648.png]]
+![[Pasted image 20261027235637.png]]
+All beige components are 3D printed, all silver are bent sheet metal.
+
+The case itself is split into two parts. A top half forming a U shaped profile, and a bottom half which is simply a baseplate with mounting flanges. The bottom half mounts the four drives and the feet, while the top half mounts basically everything else. This is intentional, since the motherboard has fragile connections to the M.2 to SATA adapter, the battery, and the SATA power supply board, and there is a lot of cable length to deal with anyways with the SATA data and power cables. The battery and mainboard attach directly to the top of the case, with the mainboard (not modelled) mounted upside down to the underside of a 2mm thick 5052 Aluminum plate, such that all connectors face down towards the "drive bay". The mounting plate is stood off from the top of the enclosure with 10mm standoffs, and the space between the mounting plate and the enclosure serves as the battery compartment. The battery is VHB taped and thermally interfaced to the top of the enclosure, and an air gap with some foam padding for safety in case of failure of the VHB tape is between the battery and the motherboard mounting plate. The SATA power supply board is mounted onto its own flanged mounting plate, and its flanges bolt into the sides of the top enclosure half. The two hard drives mount directly to the bottom frame, bolted by their bottom screw holes, and the two 2.5" drives mount to adapter plates stood off and sitting atop the 3.5" drives.
+
+The end caps of the case are 3D printed, with one end cap mounting a 92mm fan exhausting air out of the case, and the other providing access to the USB, power, and Ethernet IO. Since the Ethernet connection is provided by the I226-V chip mounted on the side of the motherboard closest the fan, I had to make my own harness from it to the RJ45 jack, hand twisted, so that the RJ45 jack could mount on the same face as the rest of the IO. 
+
+I waited for a test order of the motherboard mounting plate before ordering, so that I could confirm that the mounting hole pattern was close enough.
 
 ***WIP, TO BE CONTINUED***
