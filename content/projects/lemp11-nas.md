@@ -119,4 +119,14 @@ The end caps of the case are 3D printed, with one end cap mounting a 92mm fan ex
 
 I waited for a test order of the motherboard mounting plate before ordering, so that I could confirm that the mounting hole pattern was close enough.
 
+### Fit check & TrueNAS install
+Test plate came in, and I test fitted the motherboard to it. After making a quick change to firmware to set a 30 second debounce period on AC restore power on, I installed TrueNAS onto the machine.
+
+![[20261030_201153.jpg]]
+![[Pasted image 20261031012547.png]]
+
+I used the method at https://gist.github.com/MRi-LE/861a8d4f6850abaed8b89c3ea091d608 to partition the boot NVMe drive so that I could put an app pool on it alongside TrueNAS boot. This is normally not recommended, but I decided to do it because I was concerned about the SATA power supply causing SATA drives to go down, and wanted to keep Tailscale access even if they do. Since I don't plan on actively updating or expanding this machine, most of the risks are mitigated. I set the boot partition to 64GB and the rest of the 512GB SSD to be an app pool just hosting scripts and the Tailscale installation.
+
+Once TrueNAS was installed, I set up scripting to create a dummy NUT driver which is signaled by a systemd script when the battery falls below 50%, so that the battery ranges from about 75% to 50% and the NAS will run until it reaches 50% before shutting down, which balances cycle life with runtime during outage.
+
 ***WIP, TO BE CONTINUED***
